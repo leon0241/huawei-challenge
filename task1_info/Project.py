@@ -23,7 +23,7 @@ for step1 in traj['steps']:
         if key in keys:
             true_d[key] = abs(step1['di'] - step2['di'])
             
-    
+##does something probably    
 euc_d = {}
 man_d = {}
 for fp1 in traj['fps']:
