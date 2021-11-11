@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from metrics import eval_dist_metric
 
-with open("intro_trajectory_1.json") as f:
+with open("task1_info/intro_trajectory_1.json") as f:
     traj = json.load(f)
-    
+
 
 ## Pre-calculate the pair indexes we are interested in
 keys = []
