@@ -23,6 +23,14 @@ for step1 in traj['steps']:
         if key in keys:
             true_d[key] = abs(step1['di'] - step2['di']) 
 
+def euclidean(fp1, fp2):
+    dist = math.sqrt((fp1["green"] - fp2["green"])**2 + (fp1["blue"] - fp2["blue"])**2 + (fp1["red"] - fp2["red"])**2)
+    return dist
+
+def manhattan(fp1, fp2):
+    dist = abs(fp1["green"] - fp2["green"]) + abs(fp1["blue"] - fp2["blue"]) + abs(fp1["red"] - fp2["red"])
+    return dist
+
 euc_d = {}
 man_d = {}
 for fp1 in traj['fps']:
