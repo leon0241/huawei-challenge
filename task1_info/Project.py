@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import math
 from metrics import eval_dist_metric
 
-with open("intro_trajectory_1.json") as f:
+with open("task1_info/intro_trajectory_1.json") as f:
     traj = json.load(f)
     
 ## Pre-calculate the pair indexes we are interested in
@@ -22,14 +22,6 @@ for step1 in traj['steps']:
         key = (step1['step_index'],step2['step_index'])
         if key in keys:
             true_d[key] = abs(step1['di'] - step2['di']) 
-
-def euclidean(fp1, fp2):
-    dist = math.sqrt((fp1["green"] - fp2["green"])**2 + (fp1["blue"] - fp2["blue"])**2 + (fp1["red"] - fp2["red"])**2)
-    return dist
-
-def manhattan(fp1, fp2):
-    dist = abs(fp1["green"] - fp2["green"]) + abs(fp1["blue"] - fp2["blue"]) + abs(fp1["red"] - fp2["red"])
-    return dist
 
 euc_d = {}
 man_d = {}
